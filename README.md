@@ -3,13 +3,9 @@
 <br />
 <br />
 
-<a href="https://github.com/yongrokkwon/github-readme-stats">  
-  <img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs?username=yongrokkwon&theme=cobalt" />
-</a>
+<img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs?username=yongrokkwon&theme=cobalt" />
 
-<a href="https://github.com/yongrokkwon/github-readme-stats">
-  <img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=yongrokkwon&show_icons=true&theme=cobalt&line_height=27"/>
-</a>
+<img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=yongrokkwon&show_icons=true&theme=cobalt&line_height=27"/>
 
 <a href="https://github.com/yongrokkwon/airInfo">  
   <img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api/pin?username=yongrokkwon&repo=airInfo&theme=cobalt" />
