@@ -3,11 +3,11 @@
 <br />
 <br />
 
-<a>  
+<a href="">  
   <img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs?username=yongrokkwon&theme=cobalt" />
 </a>
 
-<a>
+<a href="">
   <img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=yongrokkwon&show_icons=true&theme=cobalt&line_height=27"/>
 </a>
 
