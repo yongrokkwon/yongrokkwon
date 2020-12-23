@@ -1,4 +1,4 @@
-### Hi there 👋
+<!--### Hi there 👋
 
 <br />
 <br />
@@ -10,6 +10,7 @@
 <a href="">
   <img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=yongrokkwon&show_icons=true&theme=cobalt&line_height=27"/>
 </a>
+-->
 
 <!--<a href="https://yongrokkwon.github.io/movie-search-android">
   <img align="center" src="https://github-readme-stats.anuraghazra1.vercel.app/api/pin?username=yongrokkwon&repo=movie-search-android&theme=cobalt" />
