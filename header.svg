@@ -10,65 +10,55 @@
       <stop offset="100%" stop-color="#e0e0e0"/>
     </linearGradient>
 
-    <style>
-      /* 슬라이드 애니메이션 정의 
-        transform: translateX(-100%) -> 화면 왼쪽 밖에 숨김
-      */
-      .slide-layer {
-        transform: translateX(-100%);
-        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); /* "슉" 느낌의 가속도 */
-      }
-      
-      /* SVG 전체 영역에 마우스를 올리면(Hover)
-        slide-layer가 0 위치(원위치)로 이동하여 화면을 덮음
-      */
-      svg:hover .slide-layer {
-        transform: translateX(0);
-      }
-
-      /* 텍스트 드래그 방지 */
-      text { user-select: none; }
-    </style>
-    
     <clipPath id="viewportClip">
       <rect width="854" height="200" rx="6" ry="6"/>
     </clipPath>
   </defs>
 
   <g clip-path="url(#viewportClip)">
-    
-    <rect width="100%" height="100%" fill="url(#darkBg)" />
-    
-    <circle cx="10" cy="10" r="10" fill="#00d8ff" opacity="0.9">
-      <animate attributeName="cx" values="10;844;10" dur="4.7s" repeatCount="indefinite" />
-      <animate attributeName="cy" values="10;190;10" dur="2.1s" repeatCount="indefinite" />
-    </circle>
+    <g>
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0 0; 0 0; -854 0; -854 0; 0 0" 
+        keyTimes="0; 0.55; 0.6; 0.95; 1" 
+        dur="10s" 
+        repeatCount="indefinite" 
+        calcMode="spline" 
+        keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+      />
 
-    <text x="50%" y="50%" 
-          font-family="Menlo, Monaco, Consolas, monospace"
-          font-size="40" font-weight="bold" fill="#e6e6e6" 
-          text-anchor="middle" dominant-baseline="middle" letter-spacing="-1px">
-      &gt;_ Hello, kwon's github!
-    </text>
+      <g>
+        <rect width="854" height="200" fill="url(#darkBg)" />
+        
+        <circle cx="10" cy="10" r="10" fill="#00d8ff" opacity="0.9">
+          <animate attributeName="cx" values="10;844;10" dur="4.7s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="10;190;10" dur="2.1s" repeatCount="indefinite" />
+        </circle>
 
+        <text x="50%" y="50%" 
+              font-family="Menlo, Monaco, Consolas, monospace"
+              font-size="40" font-weight="bold" fill="#e6e6e6" 
+              text-anchor="middle" dominant-baseline="middle" letter-spacing="-1px">
+          &gt;_ Hello, kwon's github!
+        </text>
+      </g>
 
-    <g class="slide-layer">
-      <rect width="100%" height="100%" fill="url(#lightBg)" />
-      
-      <circle cx="10" cy="10" r="10" fill="#9b59b6" opacity="0.9">
-        <animate attributeName="cx" values="10;844;10" dur="5.3s" repeatCount="indefinite" />
-        <animate attributeName="cy" values="10;190;10" dur="2.7s" repeatCount="indefinite" />
-      </circle>
+      <g transform="translate(854, 0)">
+        <rect width="854" height="200" fill="url(#lightBg)" />
+        
+        <circle cx="10" cy="10" r="10" fill="#9b59b6" opacity="0.9">
+          <animate attributeName="cx" values="10;844;10" dur="5.3s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="10;190;10" dur="2.7s" repeatCount="indefinite" />
+        </circle>
 
-      <text x="50%" y="50%" 
-            font-family="Menlo, Monaco, Consolas, monospace"
-            font-size="32" font-weight="bold" fill="#333333" 
-            text-anchor="middle" dominant-baseline="middle">
-        📫 Contact: [yongrok.kwon@gmail.com](mailto:yongrok.kwon@gmail.com)
-      </text>
+        <text x="50%" y="50%" 
+              font-family="Menlo, Monaco, Consolas, monospace"
+              font-size="32" font-weight="bold" fill="#333333" 
+              text-anchor="middle" dominant-baseline="middle">
+          📫 Contact: yongrok.kwon@gmail.com
+        </text>
+      </g>
     </g>
-
   </g>
 </svg>
-
-github readme.md에 svg 파일로 5초마다 바뀌는 형태인데 나는 마우스 호버시 바뀌도록 수정하고싶어.
