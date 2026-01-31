@@ -9,6 +9,30 @@
       <stop offset="0%" stop-color="#f5f5f5"/>
       <stop offset="100%" stop-color="#e0e0e0"/>
     </linearGradient>
+
+    <linearGradient id="handleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d8ff"/>
+      <stop offset="100%" stop-color="#0077ff"/>
+    </linearGradient>
+
+    <style>
+      /* 기본 상태: 서랍은 화면 왼쪽 밖(-814px)에 위치, 40px 손잡이만 보임 */
+      .drawer {
+        transform: translateX(-814px);
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* 부드러운 감속 효과 */
+        cursor: e-resize; /* 마우스 커서를 '당기기' 모양으로 변경 */
+      }
+      
+      /* 상호작용: 서랍(손잡이 포함)에 마우스를 올리면 0px 위치로 슬라이드 */
+      .drawer:hover {
+        transform: translateX(0);
+      }
+      
+      /* 텍스트 드래그 방지 */
+      text {
+        user-select: none;
+      }
+    </style>
     
     <clipPath id="viewportClip">
       <rect width="854" height="200" rx="6" ry="6"/>
@@ -17,48 +41,49 @@
 
   <g clip-path="url(#viewportClip)">
     
-    <g>
-      <animateTransform 
-        attributeName="transform" 
-        type="translate" 
-        values="0 0; 0 0; -854 0; -854 0; 0 0" 
-        keyTimes="0; 0.45; 0.55; 0.95; 1" 
-        dur="10s" 
-        repeatCount="indefinite" 
-        calcMode="spline" 
-        keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
-      />
+    <rect width="854" height="200" fill="url(#darkBg)" />
+    
+    <circle cx="10" cy="10" r="10" fill="#00d8ff" opacity="0.9">
+      <animate attributeName="cx" values="10;844;10" dur="4.7s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="10;190;10" dur="2.1s" repeatCount="indefinite" />
+    </circle>
 
-      <g>
-        <rect width="854" height="200" fill="url(#darkBg)" />
+    <text x="50%" y="50%" 
+          font-family="Menlo, Monaco, Consolas, monospace"
+          font-size="40" font-weight="bold" fill="#e6e6e6" 
+          text-anchor="middle" dominant-baseline="middle" letter-spacing="-1px">
+      &gt;_ Hello, kwon's github!
+    </text>
+
+
+    <g class="drawer">
+      
+      <rect width="854" height="200" fill="url(#lightBg)" />
+      
+      <circle cx="10" cy="10" r="10" fill="#9b59b6" opacity="0.9">
+        <animate attributeName="cx" values="10;844;10" dur="5.3s" repeatCount="indefinite" />
+        <animate attributeName="cy" values="10;190;10" dur="2.7s" repeatCount="indefinite" />
+      </circle>
+
+      <text x="427" y="100" 
+            font-family="Menlo, Monaco, Consolas, monospace"
+            font-size="32" font-weight="bold" fill="#333333" 
+            text-anchor="middle" dominant-baseline="middle">
+        📫 Contact: yongrok.kwon@gmail.com
+      </text>
+
+      <g transform="translate(854, 0)"> <path d="M0,0 L40,0 L40,200 L0,200 Z" fill="url(#handleGradient)" opacity="0.9"/>
         
-        <circle cx="10" cy="10" r="10" fill="#00d8ff" opacity="0.9">
-          <animate attributeName="cx" values="10;844;10" dur="4.7s" repeatCount="indefinite" />
-          <animate attributeName="cy" values="10;190;10" dur="2.1s" repeatCount="indefinite" />
-        </circle>
-
-        <text x="427" y="100" 
-              font-family="Menlo, Monaco, Consolas, monospace"
-              font-size="40" font-weight="bold" fill="#e6e6e6" 
-              text-anchor="middle" dominant-baseline="middle" letter-spacing="-1px">
-          &gt;_ Hello, kwon's github!
+        <text x="20" y="100" 
+              font-family="sans-serif" font-weight="bold" font-size="20" fill="#ffffff"
+              text-anchor="middle" dominant-baseline="middle" 
+              transform="rotate(90, 20, 100)">
+          PULL &gt;&gt;&gt;
         </text>
-      </g>
-
-      <g transform="translate(854, 0)">
-        <rect width="854" height="200" fill="url(#lightBg)" />
         
-        <circle cx="10" cy="10" r="10" fill="#9b59b6" opacity="0.9">
-          <animate attributeName="cx" values="10;844;10" dur="5.3s" repeatCount="indefinite" />
-          <animate attributeName="cy" values="10;190;10" dur="2.7s" repeatCount="indefinite" />
-        </circle>
-
-        <text x="427" y="100" 
-              font-family="Menlo, Monaco, Consolas, monospace"
-              font-size="32" font-weight="bold" fill="#333333" 
-              text-anchor="middle" dominant-baseline="middle">
-          📫 Contact: yongrok.kwon@gmail.com
-        </text>
+        <rect x="15" y="40" width="2" height="120" fill="white" opacity="0.3" rx="1"/>
+        <rect x="23" y="40" width="2" height="120" fill="white" opacity="0.3" rx="1"/>
       </g>
-
-    </g> </g> </svg>
+      
+    </g> </g>
+</svg>
