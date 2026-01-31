@@ -11,15 +11,22 @@
     </linearGradient>
 
     <style>
+      /* 슬라이드 애니메이션 정의 
+        transform: translateX(-100%) -> 화면 왼쪽 밖에 숨김
+      */
       .slide-layer {
         transform: translateX(-100%);
-        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); /* "슉" 느낌의 가속도 */
       }
       
+      /* SVG 전체 영역에 마우스를 올리면(Hover)
+        slide-layer가 0 위치(원위치)로 이동하여 화면을 덮음
+      */
       svg:hover .slide-layer {
         transform: translateX(0);
       }
 
+      /* 텍스트 드래그 방지 */
       text { user-select: none; }
     </style>
     
@@ -30,7 +37,6 @@
 
   <g clip-path="url(#viewportClip)">
     
-    <!-- 기본 화면 (다크 테마) -->
     <rect width="100%" height="100%" fill="url(#darkBg)" />
     
     <circle cx="10" cy="10" r="10" fill="#00d8ff" opacity="0.9">
@@ -45,7 +51,7 @@
       &gt;_ Hello, kwon's github!
     </text>
 
-    <!-- 호버 시 나타나는 화면 (라이트 테마) -->
+
     <g class="slide-layer">
       <rect width="100%" height="100%" fill="url(#lightBg)" />
       
@@ -58,9 +64,11 @@
             font-family="Menlo, Monaco, Consolas, monospace"
             font-size="32" font-weight="bold" fill="#333333" 
             text-anchor="middle" dominant-baseline="middle">
-        📫 Contact: yongrok.kwon@gmail.com
+        📫 Contact: [yongrok.kwon@gmail.com](mailto:yongrok.kwon@gmail.com)
       </text>
     </g>
 
   </g>
 </svg>
+
+github readme.md에 svg 파일로 5초마다 바뀌는 형태인데 나는 마우스 호버시 바뀌도록 수정하고싶어.
