@@ -16,6 +16,7 @@
   </defs>
 
   <g clip-path="url(#viewportClip)">
+
     <g>
       <animateTransform 
         attributeName="transform" 
@@ -30,13 +31,7 @@
 
       <g>
         <rect width="854" height="200" fill="url(#darkBg)" />
-        
-        <circle cx="10" cy="10" r="10" fill="#00d8ff" opacity="0.9">
-          <animate attributeName="cx" values="10;844;10" dur="4.7s" repeatCount="indefinite" />
-          <animate attributeName="cy" values="10;190;10" dur="2.1s" repeatCount="indefinite" />
-        </circle>
-
-        <text x="50%" y="50%" 
+        <text x="427" y="100" 
               font-family="Menlo, Monaco, Consolas, monospace"
               font-size="40" font-weight="bold" fill="#e6e6e6" 
               text-anchor="middle" dominant-baseline="middle" letter-spacing="-1px">
@@ -46,13 +41,7 @@
 
       <g transform="translate(854, 0)">
         <rect width="854" height="200" fill="url(#lightBg)" />
-        
-        <circle cx="10" cy="10" r="10" fill="#9b59b6" opacity="0.9">
-          <animate attributeName="cx" values="10;844;10" dur="5.3s" repeatCount="indefinite" />
-          <animate attributeName="cy" values="10;190;10" dur="2.7s" repeatCount="indefinite" />
-        </circle>
-
-        <text x="50%" y="50%" 
+        <text x="427" y="100" 
               font-family="Menlo, Monaco, Consolas, monospace"
               font-size="32" font-weight="bold" fill="#333333" 
               text-anchor="middle" dominant-baseline="middle">
@@ -60,5 +49,20 @@
         </text>
       </g>
     </g>
+
+
+    <circle cx="10" cy="10" r="10" fill="#00d8ff" stroke="#2b2b2b" stroke-width="2" opacity="1">
+      <animate attributeName="cx" values="10;844;10" dur="4.7s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="10;190;10" dur="2.1s" repeatCount="indefinite" />
+      
+      <animate 
+        attributeName="fill" 
+        values="#00d8ff; #00d8ff; #9b59b6; #9b59b6; #00d8ff" 
+        keyTimes="0; 0.55; 0.6; 0.95; 1" 
+        dur="10s" 
+        repeatCount="indefinite" 
+      />
+    </circle>
+
   </g>
 </svg>
